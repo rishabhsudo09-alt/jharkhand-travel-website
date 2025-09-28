@@ -69,7 +69,7 @@ export interface Flight {
 
 export interface Tour {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  location(id: string, location: any): unknown
+  location : string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   title: any
   id: string
