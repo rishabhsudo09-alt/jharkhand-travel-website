@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
 import { SearchForm } from "./search-form"
-import { OptimizedImage } from "@/components/ui/optimized-image"
 import { FloatingElement, ParallaxBackground, GradientOrb } from "@/components/ui/floating-elements"
 import { SmoothCarousel } from "@/components/ui/smooth-carousel"
 
