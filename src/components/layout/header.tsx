@@ -64,7 +64,7 @@ export function Header() {
               <Plane className="w-5 h-5 text-white" />
             </motion.div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Wanderlust
+              JharkhandYatra
             </span>
           </Link>
 
@@ -156,19 +156,25 @@ export function Header() {
       <Button 
         variant="ghost" 
         size="sm" 
-        className="relative overflow-hidden group hover:bg-accent/20"
+        className="relative overflow-hidden group hover:bg-accent/20 focus-ring"
       >
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         />
-        <Menu className="w-5 h-5 relative z-10 group-hover:text-primary transition-colors duration-200" />
+        <motion.div
+          animate={{ rotate: 0 }}
+          whileHover={{ rotate: 90 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Menu className="w-5 h-5 relative z-10 group-hover:text-primary transition-colors duration-200" />
+        </motion.div>
       </Button>
     </motion.div>
   </SheetTrigger>
   
   <SheetContent 
     side="right" 
-    className="px-3 w-80 glass-card backdrop-blur-xl border-l border-white/20 bg-background/95"
+    className="px-3 w-80 glass-card backdrop-blur-xl border-l border-white/20 bg-background/95 overflow-y-auto"
   >
     {/* Header */}
     <motion.div
@@ -177,16 +183,20 @@ export function Header() {
       transition={{ duration: 0.4, delay: 0.1 }}
       className="flex items-center space-x-2 pt-4 pb-2 border-b border-white/10"
     >
-      <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
+      <motion.div 
+        className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center"
+        whileHover={{ rotate: 360 }}
+        transition={{ duration: 0.5 }}
+      >
         <Plane className="w-5 h-5 text-white" />
-      </div>
+      </motion.div>
       <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Wanderlust
+        JharkhandYatra
       </span>
     </motion.div>
 
     {/* Navigation Links */}
-    <div className="flex flex-col space-y-2 mt-3">
+    <div className="flex flex-col space-y-1 mt-6">
       {[...navigation, ...moreLinks].map((item, index) => (
         <motion.div
           key={item.name}
@@ -200,20 +210,20 @@ export function Header() {
         >
           <Link
             href={item.href}
-            className="group relative flex items-center justify-between py-2 px-4 shadow-lg text-lg font-medium text-foreground/80 hover:text-foreground transition-all duration-300 hover:bg-accent/10 hover:shadow-md"
+            className="group relative flex items-center justify-between py-3 px-4 rounded-xl text-lg font-medium text-foreground/80 hover:text-foreground transition-all duration-300 hover:bg-accent/10 focus-ring"
           >
             <span className="relative z-10">{item.name}</span>
             
             {/* Animated background */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100"
+              className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl opacity-0 group-hover:opacity-100"
               layoutId={`mobile-menu-bg-${item.name}`}
               transition={{ duration: 0.2 }}
             />
             
             {/* Animated border */}
             <motion.div
-              className="absolute inset-0 border border-primary/20 rounded-lg opacity-0 group-hover:opacity-100"
+              className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100"
               initial={{ scale: 0.9 }}
               whileHover={{ scale: 1 }}
               transition={{ duration: 0.2 }}
@@ -221,8 +231,10 @@ export function Header() {
             
             {/* Arrow indicator */}
             <motion.div
-              className="text-primary/60 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0"
-              transition={{ duration: 0.2 }}
+              className="text-primary/60 opacity-0 group-hover:opacity-100"
+              initial={{ x: -10 }}
+              whileHover={{ x: 0 }}
+              transition={{ duration: 0.3, type: "spring" }}
             >
               <ChevronRight className="w-4 h-4" />
             </motion.div>
@@ -236,18 +248,32 @@ export function Header() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.3 }}
-      className=" pt-6 border-t border-white/10 space-y-3"
+      className="mt-8 pt-6 border-t border-white/10 space-y-3"
     >
       {/* Currency/Language */}
-      <div className="flex items-center justify-between p-3 rounded-lg bg-accent/5 border border-white/5">
+      <motion.div 
+        className="flex items-center justify-between p-3 rounded-xl bg-accent/5 border border-white/5 hover:bg-accent/10 transition-colors cursor-pointer"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
         <div className="flex items-center space-x-2 text-sm text-foreground/60">
-          <Globe className="w-4 h-4" />
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            <Globe className="w-4 h-4" />
+          </motion.div>
           <span>{currency}</span>
           <span>|</span>
           <span>{language.toUpperCase()}</span>
         </div>
-        <ChevronRight className="w-4 h-4 text-foreground/40" />
-      </div>
+        <motion.div
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <ChevronRight className="w-4 h-4 text-foreground/40" />
+        </motion.div>
+      </motion.div>
 
       {/* Action Buttons */}
       <div className="space-y-2">
@@ -257,9 +283,14 @@ export function Header() {
         >
           <Button 
             variant="ghost" 
-            className="w-full justify-start h-12 text-base hover:bg-accent/20 group"
+            className="w-full justify-start h-12 text-base hover:bg-accent/20 group rounded-xl focus-ring"
           >
-            <Heart className="w-5 h-5 mr-3 group-hover:text-red-500 transition-colors" />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Heart className="w-5 h-5 mr-3 group-hover:text-red-500 transition-colors" />
+            </motion.div>
             Wishlist
             <motion.div
               className="ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0"
@@ -277,9 +308,14 @@ export function Header() {
           {user ? (
             <Button 
               variant="ghost" 
-              className="w-full justify-start h-12 text-base hover:bg-accent/20 group"
+              className="w-full justify-start h-12 text-base hover:bg-accent/20 group rounded-xl focus-ring"
             >
-              <User className="w-5 h-5 mr-3 group-hover:text-primary transition-colors" />
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <User className="w-5 h-5 mr-3 group-hover:text-primary transition-colors" />
+              </motion.div>
               Account
               <motion.div
                 className="ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0"
@@ -290,9 +326,14 @@ export function Header() {
             </Button>
           ) : (
             <Button 
-              className="w-full h-12 text-base gradient-primary text-white hover:shadow-lg transition-all duration-300 group"
+              className="w-full h-12 text-base gradient-primary text-white hover:shadow-lg transition-all duration-300 group rounded-xl focus-ring"
             >
-              <User className="w-5 h-5 mr-3" />
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <User className="w-5 h-5 mr-3" />
+              </motion.div>
               Sign In
               <motion.div
                 className="ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0"
@@ -311,17 +352,18 @@ export function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, delay: 0.4 }}
-      className="absolute bottom-6 left-6 right-6 text-center"
+      className="mt-8 pt-4 text-center border-t border-white/5"
     >
-      <p className="text-xs text-foreground/40">
-        Discover the world with Wanderlust
-      </p>
+      <motion.p 
+        className="text-xs text-foreground/40"
+        animate={{ opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        Discover the Jharkhand Tourism with Jharkhandyatra
+      </motion.p>
     </motion.div>
   </SheetContent>
 </Sheet>
-
-
-
           </div>
         </div>
       </div>

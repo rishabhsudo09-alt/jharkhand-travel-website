@@ -16,15 +16,14 @@ export function ExploreHeader() {
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-            Explore Amazing
+            Explore Jharkhand's
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Destinations
+              Natural Wonders
             </span>
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Discover breathtaking destinations around the world. From tropical paradises to cultural wonders, find your
-            next adventure with our curated collection of extraordinary places.
+            Discover breathtaking waterfalls, sacred temples, lush forests, and hill stations. From spiritual journeys to adventure trails, find your perfect Jharkhand experience.
           </p>
         </motion.div>
       </div>

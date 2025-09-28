@@ -16,15 +16,14 @@ export function FlightsHeader() {
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-            Find the Best
+            Flights to
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Flight Deals
+              Jharkhand
             </span>
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Compare flights from hundreds of airlines and travel sites to find the best prices for your next adventure.
-            Book with confidence and save more.
+            Find convenient flights to Ranchi and nearby airports. Compare airlines and book your journey to explore the natural beauty of Jharkhand.
           </p>
         </motion.div>
       </div>

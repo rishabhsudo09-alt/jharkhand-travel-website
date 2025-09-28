@@ -9,60 +9,59 @@ import Image from "next/image"
 
 export default function AboutPage() {
   const stats = [
-    { icon: Users, label: "Happy Travelers", value: "50,000+" },
-    { icon: Globe, label: "Destinations", value: "200+" },
-    { icon: Award, label: "Awards Won", value: "25+" },
-    { icon: Heart, label: "5-Star Reviews", value: "10,000+" },
+    { icon: Users, label: "Happy Travelers", value: "25,000+" },
+    { icon: Globe, label: "Jharkhand Cities", value: "24+" },
+    { icon: Award, label: "Tourism Awards", value: "12+" },
+    { icon: Heart, label: "5-Star Reviews", value: "5,000+" },
   ]
 
   const values = [
     {
       icon: MapPin,
-      title: "Authentic Experiences",
-      description: "We curate genuine, local experiences that connect you with the heart and soul of each destination.",
+      title: "Local Authenticity",
+      description: "We curate genuine experiences that connect you with Jharkhand's tribal culture, traditions, and natural heritage.",
     },
     {
       icon: Shield,
-      title: "Trust & Safety",
-      description:
-        "Your safety is our priority. We partner with verified providers and maintain the highest standards.",
+      title: "Responsible Tourism",
+      description: "We promote sustainable tourism that benefits local communities and preserves Jharkhand's natural beauty.Your safety is our priority. We work with trusted local partners and maintain the highest standards for all Jharkhand experiences.",
     },
     {
       icon: Plane,
-      title: "Seamless Travel",
-      description: "From booking to boarding, we make your travel experience smooth and hassle-free.",
+      title: "Seamless Planning",
+      description: "From booking to exploring, we make your Jharkhand journey smooth and hassle-free with local expertise.",
     },
     {
       icon: Camera,
-      title: "Memorable Moments",
-      description: "We help you create unforgettable memories that will last a lifetime.",
+      title: "Unforgettable Memories",
+      description: "We help you create lasting memories of Jharkhand's waterfalls, temples, and natural wonders.",
     },
   ]
 
   const team = [
     {
-      name: "Sarah Johnson",
+      name: "Priya Sharma",
       role: "Founder & CEO",
-      image: "/professional-woman-ceo.png",
-      bio: "Former travel journalist with 15 years of experience exploring the world.",
+      image: "/team-amit-singh.jpg",
+      bio: "Jharkhand native and travel enthusiast with 15 years of experience showcasing the state's beauty.",
     },
     {
-      name: "Marcus Chen",
+      name: "Rajesh Kumar",
       role: "Head of Operations",
-      image: "/professional-man-operations.png",
-      bio: "Operations expert who ensures every trip runs smoothly from start to finish.",
+      image: "/team-priya-kumari.jpg", 
+      bio: "Local operations expert who ensures every Jharkhand journey runs smoothly with authentic experiences.",
     },
     {
-      name: "Emma Wilson",
-      role: "Travel Experience Director",
-      image: "/professional-woman-travel.jpg",
-      bio: "Passionate about creating unique experiences that showcase local culture.",
+      name: "Anita Gupta",
+      role: "Cultural Heritage Director",
+      image: "/team-ravi-oraon.jpg",
+      bio: "Passionate about creating unique experiences that showcase Jharkhand's tribal culture and natural beauty.",
     },
     {
-      name: "David Kim",
+      name: "Sunita Devi",
       role: "Technology Lead",
-      image: "/professional-man-technology.png",
-      bio: "Tech innovator making travel planning easier through cutting-edge solutions.",
+      image: "/team-sunita-devi.jpg",
+      bio: "Tech innovator making Jharkhand travel planning easier through user-friendly digital solutions.",
     },
   ]
 
@@ -73,12 +72,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Connecting You to the
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> World</span>
+              Discover the Soul of
+              <span className="bg-gradient-to-r from-green-600 to-orange-600 bg-clip-text text-transparent"> Jharkhand</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We believe travel has the power to transform lives, broaden perspectives, and create lasting connections.
-              Our mission is to make extraordinary travel experiences accessible to everyone.
+              We believe Jharkhand's natural beauty and rich cultural heritage have the power to inspire and transform. 
+              Our mission is to showcase the authentic spirit of the Land of Forests to every traveler.
             </p>
           </motion.div>
 
@@ -107,20 +106,17 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  Founded in 2020 by a team of passionate travelers, WanderLust was born from a simple idea: travel
-                  should be inspiring, accessible, and transformative for everyone.
+              <p>
+                  Founded in 2020 by a team of Jharkhand natives and travel enthusiasts, JharkhandYatra was born from a simple idea: showcase the incredible natural beauty and rich cultural heritage of our beloved state.
+                  the incredible beauty and rich culture of our homeland to the world.
                 </p>
                 <p>
-                  After years of experiencing the challenges of travel planning firsthand, we set out to create a
-                  platform that would eliminate the stress and uncertainty, while amplifying the joy and wonder of
-                  discovering new places.
+                  After years of exploring every corner of Jharkhand, we realized the need for a comprehensive platform that would help travelers discover our state's waterfalls, temples, forests, and tribal culture with ease and authenticity.
                 </p>
                 <p>
-                  Today, we&apos;re proud to have helped over 50,000 travelers create unforgettable memories across 200+
-                  destinations worldwide. But we&apos;re just getting started.
+                  Today, we're proud to have helped over 25,000 travelers explore Jharkhand's 24 districts and create unforgettable memories. From Hundru Falls to Baidyanath Temple, we're just getting started in sharing our state's treasures.
                 </p>
               </div>
               <Link href="/contact">
@@ -129,8 +125,8 @@ export default function AboutPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
               <Image 
-              src="/team-working-together-travel-office.jpg" 
-              alt="Our team" 
+              src="/jharkhand-team-office.jpg" 
+              alt="JharkhandYatra team working together" 
               className="rounded-2xl shadow-2xl" 
               width={20}
               height={20}
@@ -213,14 +209,14 @@ export default function AboutPage() {
           >
             <Card className="glass-card">
               <CardContent className="p-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Start Your Journey?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Explore Jharkhand?</h2>
                 <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Join thousands of travelers who trust us to make their dream trips a reality.
+                  Join thousands of travelers who trust us to showcase the incredible beauty and culture of Jharkhand.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/explore">
                     <Button size="lg" className="min-w-[200px]">
-                      Explore Destinations
+                      Explore Jharkhand
                     </Button>
                   </Link>
                   <Link href="/contact">
@@ -237,4 +233,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

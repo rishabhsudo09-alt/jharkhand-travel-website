@@ -2,36 +2,62 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-// import { SearchForm } from "./search-form"
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
 import { SearchForm } from "./search-form"
-import Image from "next/image"
+import { OptimizedImage } from "@/components/ui/optimized-image"
+import { FloatingElement, ParallaxBackground, GradientOrb } from "@/components/ui/floating-elements"
+import { SmoothCarousel } from "@/components/ui/smooth-carousel"
 
+const heroImages = [
+  "/landing_page.jpg",
+  "/dassam_fall.jpg", 
+  "/netarhat.jpg",
+  "/deoghar.jpg"
+]
 
 export function HeroSection() {
   const [showVideo, setShowVideo] = useState(false)
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with parallax effect */}
+      {/* Animated Background Carousel */}
       <motion.div
-        className="absolute inset-0 z-0 "
+        className="absolute inset-0 z-0"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-br from-primary/30 via-transparent to-secondary/20 z-10" />
-        <Image
-          src="/beach.jpg"
-          alt="Luxury tropical destination"
-          className="w-full h-full object-cover"
-           width={150}
-            height={150}
-              sizes="100vw"
-        />
+        <SmoothCarousel 
+          autoPlay 
+          interval={6000} 
+          showDots={false} 
+          showArrows={false}
+          className="h-full"
+        >
+          {heroImages.map((image, index) => (
+            <div key={index} className="relative h-full">
+              <ParallaxBackground>
+                <img
+                  src={image}
+                  alt={`Hero background ${index + 1}`}
+                  className=" h-full w-full object-fill"
+                />
+              </ParallaxBackground>
+            </div>
+          ))}
+        </SmoothCarousel>
+        
+        {/* Enhanced Overlay */}
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" /> */}
       </motion.div>
-    <span className="hidden">{showVideo}</span>
+
+      {/* Floating Gradient Orbs */}
+      <GradientOrb className="top-20 left-20 bg-gradient-to-r from-blue-400 to-purple-500" size="w-96 h-96" />
+      <GradientOrb className="bottom-20 right-20 bg-gradient-to-r from-orange-400 to-pink-500" size="w-80 h-80" />
+      <GradientOrb className="top-1/2 left-1/2 bg-gradient-to-r from-green-400 to-blue-500" size="w-64 h-64" />
+
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center my-10">
         <motion.div
@@ -40,8 +66,13 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-28"
         >
+          <motion.img
+              src="/logo_.png"
+              alt="Logo"
+              className="w-80 h-32 object-cover mx-auto bg-gray-200 rounded-4xl">
+          </motion.img>
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance drop-shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -52,16 +83,6 @@ export function HeroSection() {
             </span>
           </motion.h1>
 
-          <motion.p
-            className="text-xl md:text-2xl bg-black/20 shadow-2xl rounded-lg p-2 text-white mb-8 text-pretty max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            Embark on extraordinary journeys with our curated luxury travel experiences. From pristine beaches to
-            cultural wonders, your perfect adventure awaits.
-          </motion.p>
-
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -70,15 +91,15 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="gradient-primary text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform"
+              className="gradient-primary text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl"
             >
               Start Exploring
             </Button>
 
             <Button
               variant="ghost"
-              size="lg"
-              className="gradient-primary text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform"
+              size="lg" 
+              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-lg font-semibold hover:scale-105 hover:bg-white/20 transition-all duration-300"
               onClick={() => setShowVideo(true)}
             >
               <Play className="w-5 h-5 mr-2" />
@@ -98,32 +119,41 @@ export function HeroSection() {
       </div>
 
       {/* Floating elements */}
-      <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full backdrop-blur-sm"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
+      <FloatingElement className="top-20 left-10" delay={0} duration={8}>
+        <div className="w-20 h-20 bg-white/10 rounded-full backdrop-blur-sm border border-white/20 shadow-xl" />
+      </FloatingElement>
 
-      <motion.div
-        className="absolute bottom-32 right-16 w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full backdrop-blur-sm"
-        animate={{
-          y: [0, 15, 0],
-          x: [0, 10, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+      <FloatingElement className="bottom-32 right-16" delay={1} duration={6}>
+        <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full backdrop-blur-sm border border-white/10 shadow-xl" />
+      </FloatingElement>
+
+      <FloatingElement className="top-1/3 right-20" delay={2} duration={10}>
+        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full backdrop-blur-sm border border-white/10 shadow-xl" />
+      </FloatingElement>
+
+      <FloatingElement className="bottom-1/4 left-20" delay={3} duration={7}>
+        <div className="w-14 h-14 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full backdrop-blur-sm border border-white/10 shadow-xl" />
+      </FloatingElement>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setShowVideo(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            className="bg-white rounded-2xl p-8 max-w-2xl w-full"
+          >
+            <p className="text-center text-gray-600">Video player would be integrated here</p>
+            <Button onClick={() => setShowVideo(false)} className="mt-4 w-full">Close</Button>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   )
 }

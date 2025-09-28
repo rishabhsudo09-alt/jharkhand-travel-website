@@ -16,16 +16,15 @@ export function HotelsHeader() {
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-            Luxury Hotels &
+            Jharkhand Hotels &
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Premium Stays
-            </span>
+              Comfortable Stays
+    trip: "Deoghar Spiritual Tour",</span>
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Experience world-class hospitality with our curated selection of luxury hotels, boutique properties, and
-            premium accommodations worldwide.
-          </p>
+            Experience warm Jharkhand hospitality with our curated selection of comfortable hotels, heritage properties, and convenient accommodations across the state.
+            </p>
         </motion.div>
       </div>
     </section>

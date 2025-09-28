@@ -37,7 +37,7 @@ export const useAppStore = create<AppState>()(
       user: null,
       wishlist: [],
       searchFilters: {},
-      currency: "USD",
+      currency: "IND",
       language: "en",
 
       setUser: (user) => set({ user }),

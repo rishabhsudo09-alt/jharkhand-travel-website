@@ -8,36 +8,36 @@ import Image from "next/image"
 
 const categories = [
   {
-    title: "Luxury Hotels",
-    description: "Premium accommodations worldwide",
+    title: "Hotels & Resorts",
+    description: "Comfortable stays across Jharkhand",
     icon: Hotel,
     href: "/hotels",
     gradient: "from-blue-500 to-purple-600",
     image: "/hotels.jpg",
   },
   {
-    title: "Flight Deals",
-    description: "Best prices on flights globally",
+    title: "Flights to Jharkhand",
+    description: "Convenient flights to Ranchi & nearby",
     icon: Plane,
     href: "/flight",
     gradient: "from-emerald-500 to-teal-600",
     image: "/flight.jpg",
   },
   {
-    title: "Guided Tours",
-    description: "Expert-led cultural experiences",
+    title: "Jharkhand Tours",
+    description: "Waterfalls, temples & cultural tours",
     icon: MapPin,
     href: "/tours",
     gradient: "from-orange-500 to-red-600",
     image: "/tours.jpg",
   },
   {
-    title: "Car Rentals",
-    description: "Freedom to explore at your pace",
+    title: "Travel Guide",
+    description: "Complete Jharkhand travel information",
     icon: Car,
-    href: "/cars",
+    href: "/guide",
     gradient: "from-purple-500 to-pink-600",
-    image: "/cars.jpg",
+    image: "/dassam_fall.jpg",
   },
 ]
 
@@ -52,13 +52,13 @@ export function PopularCategories() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Plan Your Perfect
+            Plan Your Jharkhand
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Travel Experience
+              Adventure
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            From luxury accommodations to unforgettable adventures, we have everything you need for your dream vacation.
+            From comfortable accommodations to spiritual journeys and natural wonders, discover everything Jharkhand has to offer.
           </p>
         </motion.div>
 

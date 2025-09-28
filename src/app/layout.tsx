@@ -15,16 +15,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Wanderlust - Luxury Travel & Tourism Platform",
+  title: "JharkhandYatra - Complete Jharkhand Travel Guide",
   description:
-    "Discover extraordinary destinations and create unforgettable memories with our curated travel experiences.",
+    "Explore Jharkhand's natural beauty, waterfalls, temples, and hill stations. Complete travel guide with hotels, tours, and local experiences.",
   generator: "v0.app",
-  keywords: "travel, tourism, luxury travel, destinations, hotels, flights, tours",
-  authors: [{ name: "Wanderlust Team" }],
+  keywords: "Jharkhand travel, Ranchi tourism, Deoghar temple, Netarhat hill station, Jharkhand hotels, waterfalls",
+  authors: [{ name: "JharkhandYatra Team" }],
   openGraph: {
-    title: "Wanderlust - Luxury Travel & Tourism Platform",
+    title: "JharkhandYatra - Complete Jharkhand Travel Guide",
     description:
-      "Discover extraordinary destinations and create unforgettable memories with our curated travel experiences.",
+      "Explore Jharkhand's natural beauty, waterfalls, temples, and hill stations. Complete travel guide with hotels, tours, and local experiences.",
     type: "website",
     locale: "en_US",
   },

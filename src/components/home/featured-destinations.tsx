@@ -67,13 +67,13 @@ export function FeaturedDestinations() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Featured
+            Discover Jharkhand's
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Dream Destinations
+              Top Destinations
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Discover handpicked destinations that offer extraordinary experiences and unforgettable memories.
+            Explore handpicked destinations across Jharkhand that showcase natural beauty, spiritual significance, and cultural richness.
           </p>
         </motion.div>
 

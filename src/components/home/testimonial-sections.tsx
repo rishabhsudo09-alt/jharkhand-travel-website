@@ -8,33 +8,33 @@ import { Star, Quote } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    location: "New York, USA",
-    avatar: "/professional-woman-smiling-headshot.png",
+    name: "Priya Sharma",
+    location: "Delhi, India",
+    avatar: "/user-priya-sharma.jpg",
     rating: 5,
     comment:
-      "Wanderlust made our honeymoon in Santorini absolutely magical. Every detail was perfect, from the luxury hotel to the private sunset tour. Highly recommended!",
-    trip: "Santorini Honeymoon Package",
+      "JharkhandYatra made our spiritual journey to Deoghar absolutely divine. The temple tour was well-organized and our guide was very knowledgeable about local traditions.",
+    trip: "Deoghar Spiritual Tour",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    location: "Singapore",
-    avatar: "/asian-businessman-smiling-headshot.jpg",
+    name: "Rajesh Kumar",
+    location: "Mumbai, India",
+    avatar: "/user-rajesh-kumar.jpg",
     rating: 5,
     comment:
-      "The cultural tour of Bali exceeded all expectations. Our guide was knowledgeable and the temples were breathtaking. Will definitely book again!",
-    trip: "Bali Cultural Experience",
+      "The Ranchi waterfalls tour exceeded all expectations. Hundru Falls and Jonha Falls were breathtaking. The natural beauty of Jharkhand is incredible!",
+    trip: "Ranchi Waterfalls Experience",
   },
   {
     id: 3,
-    name: "Emma Rodriguez",
-    location: "Madrid, Spain",
-    avatar: "/spanish-woman-smiling-headshot.jpg",
+    name: "Anita Gupta",
+    location: "Kolkata, India",
+    avatar: "/user-anita-verma.jpg",
     rating: 5,
     comment:
-      "Outstanding service from start to finish. The 24/7 support was incredibly helpful when we needed to change our flight. True professionals!",
-    trip: "European Adventure Tour",
+      "Outstanding service from start to finish. The Netarhat hill station retreat was perfectly planned. The sunrise and sunset views were magical!",
+    trip: "Netarhat Hill Station Retreat",
   },
 ]
 
@@ -49,13 +49,13 @@ export function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            What Our Travelers
+            What Our Jharkhand
             <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Are Saying
+              Explorers Say
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say about their experiences.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied travelers have to say about their Jharkhand experiences.
           </p>
         </motion.div>
 
